@@ -21,7 +21,12 @@ const handlingForms = {
     },
     methods: {
         addNewMember() {
-            this.members.push(this.newMember);
+            if (this.newMember.fname && this.newMember.lname && this.newMember.instrument) {
+                this.members.push(this.newMember);
+            } else {
+                alert("Necessário preencher todas as informações!");
+            }
+            
             this.newMember = {}
         }
     }
