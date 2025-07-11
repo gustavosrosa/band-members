@@ -14,9 +14,7 @@
 <body>
 
     <main id="app">
-        <h1>
-            Membros da Banda
-        </h1>
+        <h1>Membros da Banda</h1>
 
         <table>
             <thead>
@@ -40,20 +38,20 @@
             <form>
 
                 <label for="fname">Nome:</label><br>
-                <input type="text" id="fname" name="fname"><br>
+                <input type="text" id="fname" name="fname" v-model="newMember.fname"><br>
 
                 <label for="lname">Sobrenome:</label><br>
-                <input type="text" id="lname" name="lname"><br>
+                <input type="text" id="lname" name="lname" v-model="newMember.lname"><br>
 
                 <label for="instrument">Instrumento:</label><br>
-                <select name="instrument" id="instrument">
+                <select name="instrument" id="instrument" v-model="newMember.instrument">
                     <option value="Baixo">Baixo</option>
                     <option value="Guitarra">Guitarra</option>
                     <option value="Violão">Violão</option>
                     <option value="Bateria">Bateria</option>
                 </select>
                 <br><br>
-                <input type="button" value="Adicionar">
+                <input type="button" value="Adicionar" @click="addNewMember()">
             </form>
         </section>
 
